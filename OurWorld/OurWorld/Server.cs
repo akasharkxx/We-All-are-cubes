@@ -117,8 +117,8 @@ namespace OurWorld
 
             packetHandlers = new Dictionary<int, PackerHandler>()
             {
-                { (int)ClientPackets.welcomeReceived, ServerHandle.WelcomeReceived},
-                { (int)ClientPackets.udpTestReceived, ServerHandle.UDPTestReceived}
+                { (int)ClientPackets.welcomeReceived, ServerHandle.WelcomeReceived}
+                //{ (int)ClientPackets.playerMovement, ServerHandle.PlayerMovement}
             };
             Console.WriteLine("Initialized Packets.");
         }

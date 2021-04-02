@@ -13,7 +13,7 @@ public class Client : MonoBehaviour
 
     public string ip = "127.0.0.1"; //localhost
     public int port = 26950;
-    public int myID = 0;
+    public int myId = 0;
     public TCP tcp;
     public UDP udp;
 
@@ -191,7 +191,7 @@ public class Client : MonoBehaviour
         {
             try
             {
-                _packet.InsertInt(instance.myID);
+                _packet.InsertInt(instance.myId);
                 if(socket != null)
                 {
                     socket.BeginSend(_packet.ToArray(), _packet.Length(), null, null);
@@ -248,7 +248,7 @@ public class Client : MonoBehaviour
         packetHandlers = new Dictionary<int, PacketHandler>()
         {
             { (int)ServerPackets.welcome, ClientHandle.Welcome },
-            { (int)ServerPackets.udpTest, ClientHandle.UDPTest }
+            { (int)ServerPackets.spawnPlayer, ClientHandle.SpawnPlayer }
         };
         Debug.Log("Initialized Data.");
     }
